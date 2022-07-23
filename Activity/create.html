@@ -1,0 +1,16 @@
+<form name="form1" align="center" ng-submit="onSubmit()">
+    <label>Activity Name</label> <input type="text" name="actn" class="form-control" ng-model="act.aname"
+        ng-minlength="3" ng-maxlength="8" required><br>
+    <p ng-show="form1.actn.$error.minlength">Username is too short.</p>
+    <p ng-show="form1.actn.$error.maxlength">Username is too long.</p>
+    <label>Start Date</label> <input type="date" class="form-control" ng-model="act.asdate" required><br>
+    <label>End Date</label> <input type="date" class="form-control" ng-model="act.aedate" required><br>
+    <p ng-show="act.asdate>act.aedate">End date should be greater than Start date.</p>
+    <label>Activity Type</label> <select class="form-control" ng-model="act.atype" required>
+        <option>Development</option>
+        <option>Testing</option>
+        <option>Debudding</option>
+        <option>Managing</option>
+    </select><br>
+    <button class="btn btn-primary" type="submit" ng-disabled="form1.$invalid||act.asdate>act.aedate"> Add </button>
+</form>

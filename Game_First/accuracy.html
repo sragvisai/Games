@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+            float: left;
+            background-color: blue;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            margin-top: 300px;
+        }
+    </style>
+</head>
+<script>
+    var show_boxes = function () {
+        var str = "";
+        var count=0;
+        var num = document.getElementById("number").value;
+        for (var i = 0; i < num; i++) {
+            str = str + "<div class='box'></div>";
+        }
+        document.getElementById("boxes").innerHTML = str;
+        var get_boxes = document.querySelectorAll(".box");
+        var timer=setInterval(function () {
+            var ran = Math.floor(Math.random() * get_boxes.length);
+            get_boxes[ran].style.backgroundColor = "white";
+            get_boxes[ran].onclick = function () {
+                    if(get_boxes[ran].style.backgroundColor =="white")
+                    count++;
+            };
+           setTimeout(function(){
+            get_boxes[ran].style.backgroundColor = "blue"; 
+           },700);
+        }, 700);
+        var timer = setTimeout(function(){
+            clearInterval(timer);
+            alert(count);
+            location.reload();
+        },1000*60);
+
+
+    }
+
+</script>
+
+<body>
+
+    <input type="text" id="number" />
+    <button onclick="show_boxes()">SHOW</button>
+    <div id="boxes" class="container"></div>
+</body>
+
+</html>

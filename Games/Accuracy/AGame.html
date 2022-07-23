@@ -1,0 +1,12 @@
+<div align="center">
+    <h3>Enter number of blocks: </h3><input type="text" ng-model="input" id="num"><br><br>
+    <input type="button" id="but" value="Start Game" ng-click="game()" style="background-color: #7dccd6;
+    box-shadow: inset 0 0 2px 0px black;"><br><br>
+    <div class="score">Your score is: {{score}}</div><br><br>
+    <div id="block">
+        <div ng-repeat="x in countArr track by $index">
+            <!-- <div class="blocks" ng-class="{test: $index == ran}" ng-click="checkMatching($index)"></div> -->
+            <show-boxes clickfun="checkMatching($index)" index="$index" random="ran"></show-boxes>
+        </div>
+    </div>
+</div>

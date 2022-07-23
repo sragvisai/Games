@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="lib/angular.js"></script>
+  <script src="lib/angular-route.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="mapp.js"></script>
+  <script src="Services/service1.js"></script>
+  <script src="./Accuracy/Appl.js"></script>
+  <script src="./XO/Appln.js"></script>
+  <link rel="stylesheet" type="text/css" href="CSS/Acc.css">
+  <link rel="stylesheet" type="text/css" href="CSS/Xo.css">
+</head>
+
+<body ng-app="myApp">
+  <div class="container">
+    <div class="jumbotron" align="center">
+      <h2 style="color:rgb(8, 95, 73)">Choose the game you want to play..</h2><br>
+      <p> <i><u style="color:rgb(19, 151, 52)">You played XO Game {{countXo}} times</u></i><br>
+        <a href="#/XO">XO-Game</a><br><br>
+        <i><u style="color:rgb(19, 151, 52)">You played Accuracy Game {{countAcc}} times</u></i><br>
+        <a href="#/Accuracy">Accuracy-Game</a></p>
+    </div>
+  </div>
+  <div ng-view>
+
+  </div>
+</body>
+
+</html>

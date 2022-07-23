@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="myController">
+        <input type="text" ng-model="count" />
+        <button ng-click="show_boxes()">SHOW</button>
+        <div ng-repeat="x in countArr track by $index">
+            <div>hello</div>
+        </div>
+        <div>Count - {{score}}</div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var app = angular.module("myApp", []);
+
+    app.controller("myController", function ($scope) {
+        $scope.score = 5;
+        $scope.count= 10;
+        //console.log(angular.element('#count')[0].value);
+        $scope.countArr = new Array(10);
+    })
+</script>
